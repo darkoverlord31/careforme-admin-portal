@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -51,6 +52,13 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				careforme: {
+					cyan: "#00bcd4",
+					pink: "#e91e63",
+					"light-bg": "#f5f5f5",
+					"text": "#333333",
+					"text-secondary": "#666666"
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
