@@ -28,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       <div className="flex h-14 items-center justify-between border-b px-3">
         <div className={cn("overflow-hidden", isOpen ? "block" : "hidden")}>
           <h1 className="font-semibold text-careforme-cyan text-lg">
-            CareForMe Admin
+            CareForMe AdminPortal
           </h1>
         </div>
         <Button
@@ -78,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       <div className="p-2 border-t">
         <div className="rounded-md bg-primary-foreground p-2 text-xs text-center">
           {isOpen ? (
-            <p>CareForMe Admin v1.0</p>
+            <p>Oratile Chilliboy 22000517</p>
           ) : (
             <p>v1.0</p>
           )}

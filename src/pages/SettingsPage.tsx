@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/hooks/useAuth"; // <-- Import from the hooks folder
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
 
@@ -241,25 +241,21 @@ const SettingsPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
-                <h3 className="font-medium">Version</h3>
-                <p className="text-sm text-muted-foreground">1.0.0</p>
-              </div>
+
               
               <div>
                 <h3 className="font-medium">Description</h3>
                 <p className="text-sm text-muted-foreground">
-                  CareForMe Admin Portal is a comprehensive web application for managing doctors, appointments, and users in the CareForMe healthcare platform.
+                  CareForMe Admin Portal is a comprehensive web application used by admin to manage doctors, view reports and manage the CareForMe app too.
                 </p>
               </div>
               
               <div>
-                <h3 className="font-medium">Technologies</h3>
+                <h3 className="font-medium">Developed By</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <Badge>React</Badge>
-                  <Badge>TypeScript</Badge>
-                  <Badge>Tailwind CSS</Badge>
-                  <Badge>Firebase</Badge>
+                  <Badge>Oratile Chilliboy</Badge>
+                  <Badge>22000517</Badge>
+                  <Badge>COMP 302 Assignment</Badge>
                 </div>
               </div>
             </CardContent>

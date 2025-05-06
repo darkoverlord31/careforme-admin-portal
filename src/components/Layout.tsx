@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/hooks/useAuth"; // <-- Import from the hooks folder
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import { Loader2 } from "lucide-react";

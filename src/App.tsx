@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider } from "@/contexts/AuthContext";
+import { AuthProvider } from "@/contexts/AuthContext.tsx"; // <-- Add .tsx extension
 import { useEffect } from "react";
 import { initializeSampleData } from "@/lib/firebase";
 
@@ -14,9 +14,9 @@ import Layout from "@/components/Layout";
 // Pages
 import LoginPage from "@/pages/LoginPage";
 import Dashboard from "@/pages/Dashboard";
-import DoctorsPage from "@/pages/doctors/DoctorsPage";
-import AddEditDoctorPage from "@/pages/doctors/AddEditDoctorPage";
-import ViewDoctorPage from "@/pages/doctors/ViewDoctorPage";
+import DoctorsPage from "@/pages/DoctorsPage";
+import AddEditDoctorPage from "@/pages/AddEditDoctorPage";
+import ViewDoctorPage from "@/pages/ViewDoctorPage";
 import ReportsPage from "@/pages/ReportsPage";
 import SettingsPage from "@/pages/SettingsPage";
 import NotFound from "@/pages/NotFound";

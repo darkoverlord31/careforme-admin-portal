@@ -1,7 +1,13 @@
+// src/pages/LoginPage.tsx
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/contexts/AuthContext";
+// *** Update the import path for useAuth ***
+// It should now point to your new useAuth.ts file
+import { useAuth } from "@/hooks/useAuth"; // Assuming your @/ alias includes src, and hooks is a folder in src
+// OR using relative path if hooks is in src and pages is in src/pages:
+// import { useAuth } from "../hooks/useAuth";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,9 +24,15 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      navigate("/");
+      // The AuthContext's onAuthStateChanged listener will update the user state,
+      // and you might have routing set up elsewhere to redirect based on the user state.
+      // If not, this navigate("/") will happen immediately after the login promise resolves,
+      // potentially before the onAuthStateChanged listener updates the user state.
+      // Consider handling navigation based on the 'user' state in a higher-level component or router.
+      navigate("/"); // Navigate to the dashboard on successful login
     } catch (error) {
       console.error("Login failed:", error);
+      // The AuthContext already shows a toast on error, so no need for another error display here unless you want different UI feedback.
     }
   };
 
@@ -65,10 +77,10 @@ const LoginPage: React.FC = () => {
               </div>
             </CardContent>
             <CardFooter>
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full bg-careforme-cyan hover:bg-careforme-cyan/90"
-                disabled={loading}
+                disabled={loading} // Disable button while loading
               >
                 {loading ? (
                   <>
